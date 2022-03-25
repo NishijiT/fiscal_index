@@ -4,7 +4,7 @@ import streamlit as st
 
 st.title('都道府県財政指標ダッシュボード')
 
-df = pd.read_csv('C:\\python\\streamlit\\fiscal_index_pref.csv', encoding='shift_jis')
+df = pd.read_csv('fiscal_index_pref.csv', encoding='shift_jis')
 #print(df.head())
 
 df_jp_mean = df[df['都道府県名']=='全国']

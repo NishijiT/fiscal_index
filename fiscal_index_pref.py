@@ -38,7 +38,7 @@ df_line1 = pd.DataFrame(index=[2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2
 df_line1['全国'] = df_jp_mean['経常収支比率']
 df_line1['大阪府'] = df_osaka['経常収支比率']
 pref_list1 = df['都道府県名'].unique()
-option_pref1 = st.selectbox('都道府県:経常収支比率', (pref_list1))
+option_pref1 = st.selectbox('都道府県:経常収支比率(%)', (pref_list1))
 df1 = df1[df1['都道府県名'] == option_pref1]
 df_line1[option_pref1] = df1['経常収支比率']
 
@@ -54,7 +54,7 @@ df_line2 = pd.DataFrame(index=[2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2
 df_line2['全国'] = df_jp_mean['実質公債費比率']
 df_line2['大阪府'] = df_osaka['実質公債費比率']
 pref_list2 = df['都道府県名'].unique()
-option_pref2 = st.selectbox('都道府県:実質公債費比率', (pref_list2))
+option_pref2 = st.selectbox('都道府県:実質公債費比率(%)', (pref_list2))
 df2 = df2[df2['都道府県名'] == option_pref2]
 df_line2[option_pref2] = df2['実質公債費比率']
 
@@ -70,7 +70,7 @@ df_line3 = pd.DataFrame(index=[2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2
 df_line3['全国'] = df_jp_mean['将来負担比率']
 df_line3['大阪府'] = df_osaka['将来負担比率']
 pref_list3 = df['都道府県名'].unique()
-option_pref3 = st.selectbox('都道府県:将来負担比率', (pref_list3))
+option_pref3 = st.selectbox('都道府県:将来負担比率(%)', (pref_list3))
 df3 = df3[df3['都道府県名'] == option_pref3]
 df_line3[option_pref3] = df3['将来負担比率']
 
@@ -96,5 +96,6 @@ if show_df == True:
        st.write(df_line4)
 
 
-
-
+st.text('出典:「RESAS（地域経済分析システム）-自治体財政状況の比較-」を加工して作成')
+st.text('当該ページのURL')
+st.text('https://resas.go.jp/municipality-finance/#/map/5.333900736553437/41.42090017812787/142.29371418128918/13/13101/0/0.0/2019/1/-')

@@ -79,23 +79,7 @@ show_df = st.checkbox('将来負担比率')
 if show_df == True:
        st.write(df_line3)
 
-#4 ラスパイレス指数
-st.subheader('ラスパイレス指数')
-df4 = df_pref[['都道府県名','ラスパイレス指数']]
-df_line4 = pd.DataFrame(index=[2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019])
-df_line4['全国'] = df_jp_mean['ラスパイレス指数']
-df_line4['大阪府'] = df_osaka['ラスパイレス指数']
-pref_list4 = df['都道府県名'].unique()
-option_pref4 = st.selectbox('都道府県:ラスパイレス指数', (pref_list4))
-df4 = df4[df4['都道府県名'] == option_pref4]
-df_line4[option_pref4] = df4['ラスパイレス指数']
 
-st.line_chart(df_line4)
-show_df = st.checkbox('ラスパイレス指数')
-if show_df == True:
-       st.write(df_line4)
-
-
-st.text('出典:「RESAS（地域経済分析システム）-自治体財政状況の比較-」を加工して作成')
-st.text('当該ページのURL')
-st.text('https://resas.go.jp/municipality-finance/#/map/5.333900736553437/41.42090017812787/142.29371418128918/13/13101/0/0.0/2019/1/-')
+st.text('  ')
+st.text('出典:総務省「地方公共団体の主要財政指標一覧」の各年度のデータを基に作成。')
+st.text('(https://www.soumu.go.jp/iken/shihyo_ichiran.html)')
